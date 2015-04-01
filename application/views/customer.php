@@ -16,7 +16,7 @@ $this->load->view('alpha');
                     foreach($customer->result() as $row)
                     {
                         ?>
-                        <tr> <td class="col-md-1"><?php echo $row->id;?></td><td class="col-md-2"><?php echo $row->name;?></td><td class="col-md-2"><?php echo $row->mobile_no;?></td><td class="col-md-2"><?php echo date('d-M-Y',$row->booking_date);?></td><td class="col-md-2"><?php echo date('d-M-Y',$row->registration_date);?></td><td class="col-md-1"><a href='<?php echo base_url().'welcome/successful_insert/'.$row->id;?>'> All Detail </a></td><td class="col-md-2"><a href=""> Payment Detail</a></td></tr>
+                        <tr> <td class="col-md-1"><?php echo $row->id;?></td><td class="col-md-2"><?php echo $row->name;?></td><td class="col-md-2"><?php echo $row->mobile_no;?></td><td class="col-md-2"><?php echo date('d-M-Y',$row->booking_date);?></td><td class="col-md-2"><?php echo date('d-M-Y',$row->registration_date);?></td><td class="col-md-1"><a href='<?php echo base_url().'welcome/successful_insert/'.$row->id;?>'> All Detail </a></td><td class="col-md-2"><a href="<?php echo base_url();?>welcome/payment/<?php echo $row->id;?>"> Payment Detail</a></td></tr>
                         <?php
                     }
                     echo " </table>";

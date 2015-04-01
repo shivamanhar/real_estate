@@ -88,22 +88,19 @@ class Welcome extends CI_Controller
 		$this->load->view('template/contant', $data);
 	}
 	//function for payment
-	public function payment()
+	public function payment($customer = NULL)
 	{
-		
-		
-		echo "payment";
+		$data['page'] = 'payment';
+		$data['title'] = 'Customer payment record';
+		$data['info_form'] = $this->m_logic->db_where('info_form', 'id',$customer);
+		$this->load->view('template/contant', $data);
 	}
 	public function report($customer = NULL)
 	{
-		
 		$data['page'] = 'customer';
 		$data['title'] = 'Report';
 		$data['customer'] = $this->m_logic->db_like('info_form', 'name', $customer);
 		$this->load->view('template/contant', $data);
-		
-			 
-		
 	}
 	public function get_customer($customer_id = 'NULL')
 	{

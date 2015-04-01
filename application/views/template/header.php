@@ -19,7 +19,7 @@
     <div>
       <<ul class="nav navbar-nav">
         <li><a href="<?php echo base_url();?>welcome/entry_form" style="color:#fff">New Customer</a></li>
-        <li><a href="<?php echo base_url();?>welcome/payment" style="color:#fff">Payment</a></li>
+        <!--<li><a href="<?php echo base_url();?>welcome/payment" style="color:#fff">Payment</a></li>-->
         <li><a href="<?php echo base_url();?>welcome/report" style="color:#fff">Report</a></li>
         <li><a href="<?php echo base_url();?>welcome/" style="color:#fff">Project</a></li>
         <!--  <li><a href="#">Page 3</a></li>-->
