@@ -33,18 +33,19 @@ else
             <table class="table table-striped success">
                 <tr> <th colspan="8"> Customer Detail</th></tr>
                 <tr> <td class= "col-md-2"> <b> <i>Customer Id :</i></b></td><td class= "col-md-1"> <?php echo $customer_id;?></td> <td class= "col-md-1"><b> Name:</b></td><td class= "col-md-2"><?php echo $row->name;?></td>
-               <td class= "col-md-2"><b> Project Name:</b></td>
+               <td class= "col-md-1"><b> Project Name:</b></td>
                <td class= "col-md-2"> <?php echo $row->project_name;?></td> 
-               <td class= "col-md-2"><b> Mobile No.</b></td>             
-               <td class= "col-md-2"> </td>
+               <td class= "col-md-2"><b> Mobile.</b></td>             
+               <td class= "col-md-2"> <?php echo $row->mobile_no;?></td>
                <tr> <th colspan="8"> Payment Detail</th></tr>
                <tr>
                <td class= "col-md-2"><b> Total Payment.</b></td>             
-               <td class= "col-md-2"> </td>
-               <td class= "col-md-2"><b> Balance</b></td>             
-               <td class= "col-md-2"> </td>
+               <td class= "col-md-1"> </td>
+               <td class= "col-md-1"><b> Balance</b></td>             
+               <td class= "col-md-1"> </td>
                <td class= "col-md-2"><b> Last Payment</b></td>             
-               <td class= "col-md-2"> </td>
+               <td class= "col-md-1"> </td>
+               <td class ="col-md-2"><a href="#"> Payment Summary </a></td>
                </tr>
             </table>
                 </div>                
@@ -55,9 +56,11 @@ else
                     <tr> <th colspan="8"> New Payment</th></tr>
                     <tr>
                     <td class= "col-md-1"><b> Date: </b><td class= "col-md-2"><input type="date" name="payment_date" style="line-height:15px;width:150px;" required></td>
-                    <td class= "col-md-2"><b> Perpose:</b><input type="radio" name="perpose" value="EMI"> EMI <input type="radio" name="perpose" value="Booking"> Booking</td>
+                    <td class= "col-md-2"><b> Perpose:</b><input type="radio" name="perpose" value="EMI"> EMI <input type="radio" name="perpose" value="booking"> Booking</td>
                     <td class= "col-md-1"><b> Amount:</b></td><td class= "col-md-2"><input type="text" name="amount"></td><td class= "col-md-1"><b>Remark:</b></td><td class= "col-md-2"><textarea> </textarea></td>
                     </tr>
+                    <tr> <td> <th colspan="8"><input type="submit" value="Pad" class="btn btn-success"></th></td></tr>
+                    
                     </table>
                 </div>
             </div>

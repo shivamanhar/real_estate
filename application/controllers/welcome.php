@@ -37,6 +37,7 @@ class Welcome extends CI_Controller
 		$this->form_validation->set_rules('plot_area', 'Plot Area', 'required|numeric|trim');
 		$this->form_validation->set_rules('rakba', 'Rakba', 'required|numeric|trim');
 		$this->form_validation->set_rules('face', 'face', 'required|trim');
+		$this->form_validation->set_rules('voucher', 'voucher', 'required|trim');
 		$this->form_validation->set_rules('booking_amount', 'Booking Amount', 'required|trim|numeric');
 		$this->form_validation->set_rules('owner_name', 'Owner Name', 'required|trim');
 		$this->form_validation->set_rules('father_name', 'Father Name', 'required|trim');
@@ -51,7 +52,7 @@ class Welcome extends CI_Controller
 		
 		if($this->form_validation->run() == false)
 		{
-			$this->load->view('entry_form');
+			$this->entry_form();
 		}
 		else
 		{
@@ -74,7 +75,16 @@ class Welcome extends CI_Controller
 				     );
 			
 			$insert_id = $this->m_logic->db_insert('info_form', $data);
-			 $url = base_url();
+			$url = base_url();
+			$payment_data = array(
+					      'customer_id' =>$insert_id,
+					      'v_no' =>$this->input->post('voucher'),
+					      'date' =>strtotime(date('d-m-y')),
+					      'perpose' =>'booking',
+					      'amount'=>$this->input->post('booking_amount'),
+					      'remark'=>'Just Booking amount'
+					      );
+			$insert_id = $this->m_logic->db_insert('payment', $payment_data);
 			redirect($url.'welcome/successful_insert/'.$insert_id, 'refresh');
 		}
 	}
