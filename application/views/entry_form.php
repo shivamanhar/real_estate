@@ -1,4 +1,9 @@
+
+
+<?php echo validation_errors(); ?>
+
 <div class="container">
+ 
             <div class="row">
                 <div class="table-responsive">
 <form action="<?php echo base_url();?>welcome/form_insert" method="POST">
@@ -9,6 +14,7 @@
             <tr> <td>Plot Area:</td><td><input type="text" value="<?php echo set_value('plot_area'); ?>" name="plot_area" required  size="50"></td></tr>
             <tr> <td>Rakba :</td><td><input type="text" value="<?php echo set_value('rakba'); ?>" name="rakba" required size="50"></td></tr>
             <tr> <td>Face : </td><td> <input type="text" name="face"  value="<?php echo set_value('face'); ?>" required ></td></tr>
+            <tr> <td>Voucher No.: </td><td><input type="text" name="voucher" value="<?php echo set_value('voucher'); ?>"></td></tr>
             <tr> <td>Booking Amount: </td><td> <input type="text" name="booking_amount" value="<?php echo set_value('face'); ?>" required></td></tr>
         <tr> <th colspan="4">Plot All Detail </th></tr>
             <tr> <td>Owner Name:</td><td><input type="text" value="<?php echo set_value('owner_name'); ?>" name="owner_name" required size="50"></td>           </tr>
